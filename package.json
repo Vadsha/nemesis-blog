@@ -1,0 +1,28 @@
+{
+  "name": "blogs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@vueup/vue-quill": "^1.2.0",
+    "firebase": "^10.1.0",
+    "material-icons": "^1.13.9",
+    "pinia": "^2.1.6",
+    "vue": "^3.2.13",
+    "vue-router": "^4.0.3"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-plugin-router": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "autoprefixer": "^10.4.15",
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "postcss": "^8.4.27",
+    "tailwindcss": "^3.3.3"
+  }
+}
