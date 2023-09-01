@@ -32,7 +32,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth'
                     auth.onAuthStateChanged((user) => {
                       if (user) {
                         localStorage.setItem('nemesis_id_token' , user.toJSON().uid)
-                        this.$router.push({name : 'HomeView'})
+                        this.$router.push({name : 'AdminBlogsView'})
                       }
                     });
                 }).catch(() => {})

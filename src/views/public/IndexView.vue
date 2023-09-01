@@ -72,7 +72,7 @@
                 <div class="p-4 sm:w-1/3">
                     <img src="@/assets/images/logo.png" class="w-20 mx-auto bg-white rounded-full" alt="">
                     <h1 class="text-3xl font-bold tracking-wider text-center">
-                        Nemesis <router-link :to="{name : 'LoginView'}" class="text-6xl cursor-auto select-none text-makeup-1">.</router-link>
+                        Nemesis <span @click="navigate" class="text-6xl select-none text-makeup-1">.</span>
                     </h1>
                     <p class="w-full mt-2 text-base text-center">© 2023 Nemesis. All rights reserved.</p>
                 </div>
@@ -112,6 +112,16 @@ import ContactIcons from '@/components/public/ContactIcons.vue'
                         path : 'ContactView'
                     },
                 ]
+            }
+        },
+        methods : {
+            navigate(){
+                let token = localStorage.getItem('nemesis_id_token');
+                if (token) {
+                    this.$router.push({name : 'AdminBlogsView'})
+                } else {
+                    this.$router.push({name : 'LoginView'})
+                }
             }
         }
     }
