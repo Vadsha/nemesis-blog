@@ -8,7 +8,7 @@
 
                 <article v-if="blog.image" class="rounded md:w-2/3 md:px-12">
                 <img class="w-3/4 mx-auto rounded shadow-xl sm:w-2/3 h-fit" :src="blog.image" alt="">
-                <h1 class="py-3 text-xl text-center">{{ blog.title }}</h1>
+                <h1 class="py-3 text-3xl text-center">{{ blog.title }}</h1>
                 <div class="flex justify-between">
                     <p class="w-1/3 py-6 tracking-widest text-center text-blue"># {{ blog.tag }}</p>
                     <p class="items-center justify-center hidden w-1/3 text-xl sm:flex">
@@ -74,7 +74,15 @@ import SideItems from '@/components/public/SideItems.vue'
             getDoc(doc(db , 'blogs' , this.id)).then((res) => {
                 this.blog = res.data();
                 this.blog.id = res.id;
-                document.title = this.blog.title
+                document.title = this.blog.title;
+                const styleElement = document.createElement('style');
+                styleElement.innerHTML = `p h2 {
+                                                                font-size: 1.5rem;
+                                                            }
+                                                            p ul , p ol {
+                                                                list-style:decimal;
+                                                            }`;
+                document.head.appendChild(styleElement);
                 this.liked = localStorage.getItem(this.blog.id)
             }).catch(() => {
                 this.$router.push({name : 'NotFound' , params : {catchAll : 'error'}});   
@@ -85,5 +93,4 @@ import SideItems from '@/components/public/SideItems.vue'
 </script>
 
 <style scoped>
-
 </style>
